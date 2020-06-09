@@ -9,6 +9,7 @@
 
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="LOG4J2" />
     </settings>
 
     <environments default="dev">
