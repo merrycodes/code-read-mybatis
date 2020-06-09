@@ -100,6 +100,7 @@ public class ExecutorTest {
         SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.REUSE, true);
         // 降低调用复杂性
         List<Object> list = sqlSession.selectList("com.merrycodes.mapper.UserMapper.selectById", 10);
+        // 测试二级缓存，调用clearLocalCache()，二级缓存会清空
         sqlSession.commit();
         sqlSession.selectList("com.merrycodes.mapper.UserMapper.selectById", 10);
         System.out.println(list.get(0));

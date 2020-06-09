@@ -3,6 +3,10 @@ package com.merrycodes.mapper;
 import com.merrycodes.model.User;
 import org.apache.ibatis.annotations.*;
 
+/**
+ * @author MerryCodes
+ * @date 2020/6/5 21:13
+ */
 // 二级缓存命名空间
 //@CacheNamespace
 public interface UserMapper {
@@ -11,6 +15,6 @@ public interface UserMapper {
     User selectById(Integer id);
 
     @Update("update  user set name = #{arg1} where id = #{arg0}")
-    void setName(Integer id, String name);
+    Integer setName(Integer id, String name);
 
 }
