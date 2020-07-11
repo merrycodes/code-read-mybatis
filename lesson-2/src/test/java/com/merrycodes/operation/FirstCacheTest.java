@@ -23,9 +23,8 @@ import static org.junit.Assert.assertSame;
  * @author MerryCodes
  * @date 2020/6/8 13:08
  */
-public class FirstCacheExecutorTest {
+public class FirstCacheTest {
 
-    private SqlSessionFactory sqlSessionFactory;
     private SqlSession sqlSession;
 
     @Before
@@ -33,7 +32,7 @@ public class FirstCacheExecutorTest {
         // 获取构建器
         SqlSessionFactoryBuilder factoryBuilder = new SqlSessionFactoryBuilder();
         // 解析XML 并构造会话工厂
-        sqlSessionFactory = factoryBuilder.build(Resources.getResourceAsStream("mybatis-config.xml"));
+        SqlSessionFactory sqlSessionFactory = factoryBuilder.build(Resources.getResourceAsStream("mybatis-config.xml"));
         sqlSession = sqlSessionFactory.openSession();
     }
 
@@ -42,7 +41,6 @@ public class FirstCacheExecutorTest {
      *     <li>SQL和参数<strong>相同</strong></li>
      *     <li>MappedStatement<strong>相同</strong></li>
      *     <li>SqlSession<strong>相同</strong></li> 回话级缓存
-     *
      * </ol>
      */
     @Test

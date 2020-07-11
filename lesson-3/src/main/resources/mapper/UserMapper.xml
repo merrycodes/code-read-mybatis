@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.merrycodes.mapper.UserMapper">
+    <!-- 二级缓存命名空间 -->
+    <!-- <cache/> -->
+    <!-- 使xml中的查询和class中的查询使用一个命名空间，关联起来 -->
+    <cache-ref namespace="com.merrycodes.mapper.UserMapper"/>
+    <!-- TODO: MerryCodes 2020-06-15 13:16:27 测试不关联是否可以命中缓存 -->
+</mapper>
